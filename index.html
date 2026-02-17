@@ -677,10 +677,30 @@ document.querySelectorAll("table tr").forEach(tr => {
 });
 
 
-    window.print();
+   const imagens = document.images;
+let carregadas = 0;
 
-    // volta a página ao normal
+if (imagens.length === 0) {
+    finalizarPrint();
+} else {
+    for (let i = 0; i < imagens.length; i++) {
+        if (imagens[i].complete) {
+            carregadas++;
+        } else {
+            imagens[i].onload = () => {
+                carregadas++;
+                if (carregadas === imagens.length) finalizarPrint();
+            };
+        }
+    }
+
+    if (carregadas === imagens.length) finalizarPrint();
+}
+
+function finalizarPrint() {
+    window.print();
     document.body.innerHTML = original;
+}
 }
 
 
