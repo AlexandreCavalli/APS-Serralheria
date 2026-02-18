@@ -28,6 +28,14 @@ body {
     }
 }
 
+@media print {
+    .valor-orcado {
+        color: red;
+        font-weight: bold;
+        font-size: 16px; /* opcional, pode ajustar */
+    }
+}
+
 
 /* ===== CAIXAS ===== */
 .input-box,
