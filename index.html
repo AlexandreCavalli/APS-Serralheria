@@ -229,12 +229,14 @@ function calcular() {
     <td class="valor">${moeda(pintura)}</td>
 </tr>
 
-    <tr>
+    ${document.getElementById("centrais").value ? `
+<tr>
     <td class="desc">
-        Sensor Anti Esmagamento <span class="qtd">(${document.getElementById("centrais").value || 0} un.)</span>
+        Sensor Anti Esmagamento <span class="qtd">(${document.getElementById("centrais").value} un.)</span>
     </td>
     <td class="valor">${moeda(centrais)}</td>
 </tr>
+` : ""}
 
     <tr>
         <td class="desc">Mão de obra</td>
