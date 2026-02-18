@@ -215,11 +215,12 @@ function calcular() {
 </tr>
 
     <tr>
-        <td class="desc">
-            Cobre rolo <span class="qtd">${larguraM.toFixed(2)} m</span>
-        </td>
-        <td class="valor">${moeda(cobreRolo)}</td>
-    </tr>
+    <td class="desc">
+        Cobre rolo ${larguraM.toFixed(2)} m
+        <span class="qtd">1</span>
+    </td>
+    <td class="valor">${moeda(cobreRolo)}</td>
+</tr>
 
     <tr>
     <td class="desc">
@@ -500,7 +501,7 @@ document.querySelectorAll("tr").forEach(tr => {
         <div style="padding:20px;font-family:Arial">
             ${resultado.innerHTML}
         </div>
-        <h3>Valor Orçado: ${moeda(ultimoOrcamento.total)}</h3>
+        <h3 class="valor-orcado">Valor Orçado: ${moeda(ultimoOrcamento.total)}</h3>
             <br>
             <p>- Pagamento a vista: Entrada de 50% e restante na entrega</p>
             <p>- Em até 12x no cartão com juros da máquina </p>
